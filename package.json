@@ -1,0 +1,31 @@
+{
+    "name": "@kdtjs/renovate-config",
+    "version": "0.0.1",
+    "description": "Shared Renovate Bot Config Preset",
+    "author": "Diep Dang <khangdt310722@gmail.com>",
+    "license": "MIT",
+    "homepage": "https://github.com/kdtjs/renovate-config",
+    "repository": "github:kdtjs/renovate-config",
+    "main": "default.json",
+    "files": ["default.json"],
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "validate": "renovate-config-validator default.json",
+        "test": "npm run validate",
+        "prepare": "simple-git-hooks"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^18.4.4",
+        "@commitlint/config-conventional": "^18.4.4",
+        "renovate": "^37.129.1",
+        "simple-git-hooks": "^2.9.0"
+    },
+    "commitlint": {
+        "extends": "@commitlint/config-conventional"
+    },
+    "simple-git-hooks": {
+        "commit-msg": "npx --no -- commitlint --edit ${1}"
+    }
+}
