@@ -1,8 +1,8 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "timezone": "Asia/Ho_Chi_Minh",
     "extends": [
         "config:recommended",
+        "group:allNonMajor",
         ":automergeAll",
         ":automergeBranch",
         ":automergeRequireAllStatusChecks",
@@ -12,7 +12,7 @@
         ":respectLatest",
         ":semanticCommitTypeAll(chore)"
     ],
-    "automergeSchedule": ["after 11pm and before 7am"],
+    "platformAutomerge": true,
     "rangeStrategy": "bump",
     "npm": {
         "commitMessageTopic": "{{prettyDepType}} {{depName}}"
